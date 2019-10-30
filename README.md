@@ -31,11 +31,11 @@ var app =new Vue({
 
 `v-show` 仅是隐藏 / 显示，值为 false 时，该元素依旧存在于 dom 树中。若其原有样式设置了 display: none 则会导致其无法正常显示。
 ### 1.5 用户输入
-`v-on` 事件监听指令
-`v-on:click` 绑定一个 click ，点击事件
-`v-on:click="logMessage"` 用 logMessage 这个方法来处理这个点击事件
-`v-model` 实现双向数据绑定
-`<input type="text" v-model="message">` 这个 input 元素跟应用里的 message 属性绑定到一块儿
+`v-on` 事件监听指令  
+`v-on:click` 绑定一个 click ，点击事件  
+`v-on:click="logMessage"` 用 logMessage 这个方法来处理这个点击事件  
+`v-model` 实现双向数据绑定  
+`<input type="text" v-model="message">` 这个 input 元素跟应用里的 message 属性绑定到一块儿  
 ### 1.6 循环
 `v-for` 循环指令，指令需要以 site in sites 形式的特殊语法，sites 是源数据数组并且 site 是数组元素迭代的别名。  
 ```
