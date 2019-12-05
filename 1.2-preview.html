@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 挂载点 -->
+    <div id="app03">
+
+        <!-- 1. 文本显示 -->
+        <div>
+            <!-- 1.1 插值表达式 -->
+            <P>{{site}}</P>
+            <!-- 1.2 指令显示文本 v-text -->
+            <p v-text="site"></p>
+
+            <!-- 2. 显示带有 HTML 标签的文本 -->
+            <p>{{domin}}</p>
+            <p v-html="domin"></p>
+
+            <!-- 3. 数据作为属性的值 v-bind -->
+            <p v-bind:title="name">彩虹</p>
+            <!-- 简写形式 -->
+            <p :title="name">彩虹</p>
+            <!-- 也可以直接将数据写到属性值中，不通过实例数据 -->
+            <p :title="'许巍'">蓝莲花</p>
+
+            <!-- 4. 数据上可以直接进行运算或这运用 JS 函数处理 -->
+            <p>{{ num *2 + 100 }}</p>
+            <p>{{ site.slice(0,3).toUpperCase() }}</p>
+        </div>
+
+        <!-- 5. 模板与样式绑定 -->
+        <div>
+            <p class="correct">{{single}}</p>
+            <p class="error">{{single}}</p>
+
+            <!-- 传统内联样式 -->
+            <p style="color: hotpink; font-size: xx-small;">{{site}}</p>
+
+            <!-- 将多个属性值打包到一个对象中 -->
+            <p :style="styleRule">{{site}}</p>
+
+            <!-- 数组属性 -->
+            <p :style="[fontSizeStyle,colorStyle]">{{site}}</p>
+
+            <!-- 对象属性 -->
+            <p :style="{color: 'blue', fontSize: '34px'}">{{site}}</p>
+
+            <!-- 类属性的值使用数组 -->
+            <!-- 数组里面的属性值根据 HTML Dom 顺序显示 -->
+            <p :class="[correctClass,errorClass]">{{site}}</p>
+            <p :class="[errorClass,correctClass]">{{site}}</p>
+            <p :class="errorClass">{{site}}</p>
+            <p :class="correctClass">{{site}}</p>
+
+            <!-- 将类名作为 Vue 实例数据对象的属性，并设置状态（布尔） -->
+            <p>将类名作为 Vue 实例数据对象的属性，并设置状态（布尔）</p>
+            <p :class="{correct: isCorrect}">{{site}}</p>
+            <!-- 再次声明一个类样式，后面的样式会覆盖掉前面同名样式规则 -->
+            <p :class="{ correct: isCorrect,error: isError}">{{site}}</p>
+        </div>
+
+    </div>
+</body>
+<!-- 引入 Vue.js -->
+<script src="./vue.js"></script>
+
+<!-- 创建 Vue 实例 -->
+<script>
+    var gg = new Vue({
+        el: '#app03', // id选择器
+        data: {
+            site: 'vantch',
+            domin: '<a href="https://vantch.com/" target="_black"> vantch.com </a>',
+            name: 'JayChou',
+            num: '100',
+            single: '那也曾是我的模样',
+            styleRule: {
+                color: 'green',
+                fontSize: '24px'
+            },
+            fontSizeStyle: {
+                fontSize: '11px'
+            },
+            colorStyle: {
+                color: 'grey'
+            },
+            correctClass: 'correct',
+            errorClass: 'error',
+            isCorrect: true,
+            isError: true,
+
+        }
+    })
+</script>
+
+</html>

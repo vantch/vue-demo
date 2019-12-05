@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复习vue的数据与指令的基本用法</title>
+</head>
+
+<body>
+    <!-- 挂载点 -->
+    <div id="app">
+        <!-- 1. 显示纯文本 -->
+        <!-- 1.1 插值表达式 -->
+        <h3>{{site}}</h3>
+        <!-- 1.2 指令显示文本 -->
+        <h3 v-text='site'></h3>
+        <!-- 2. 显示带有 HTML 标签的文本 -->
+        <h3 v-text="name"></h3>
+        <h3 v-html="name"></h3>
+        <!-- 3. 数据作为属性值 v-bind="" -->
+        <h3 v-bind:title="title">彩虹</h3>
+        <!-- 也可以将数据直接写到属性值中，不通过实例数据 -->
+        <h3 v-bind:title="'许巍'">蓝莲花</h3>
+        <!-- 4. 数据上可以直接运算 或者 运用 JS 函数处理 -->
+        <h3>{{ num * 3 +100 }}</h3>
+        <h3>{{ domin.slice(0,3).toUpperCase() }}</h3>
+    </div>
+</body>
+<!--引入 Vue.js 框架-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            site: 'vantch.com',
+            domin: 'van',
+            name: '<span style="color:green"> 稻香 </span>',
+            title: '周杰伦',
+            num: '100'
+        }
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>模板与样式绑定</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- 挂载点 -->
+    <div id="app01">
+        <p class="correct error">{{text}}</p>
+        <p class="error">{{text}}</p>
+        <p>阳光洒在杨树上</p>
+
+        <!-- 需要将类名作为 Vue 实例数据对象的属性，并设置状态（布尔） -->
+        <p v-bind:class="{correct: isActive}">{{text}}</p>
+
+        <!-- 再次声明一个类样式，后面的样式会覆盖掉前面同名样式规则 -->
+        <p v-bind:class="{correct: isActive,error: hasErrior}">{{text}}</p>
+
+        <!-- 类属性的值使用数组 -->
+        <p v-bind:class="[correctClass,errorClass]">{{text}}</p>
+
+        <!-- 传统内联样式 style -->
+        <p style="color: saddlebrown; font-size:20px;">{{text}}</p>
+
+        <!-- 数组属性 -->
+        <p v-bind:style="[colorStyle, fontSizeStyle]">{{text}}</p>
+
+        <!-- 对象属性 -->
+        <p v-bind:style="{color: 'saddlebrown', fontSize:'20px'}">{{text}}</p>
+        <!-- 将多个属性值打包到一个对象中 -->
+        <p v-bind:style="styleRule">{{text}}</p>
+</body>
+
+<!-- 引入 Vue.js  -->
+<script src="./vue.js"></script>
+
+<!-- 建立实例 -->
+<script>
+    var vm = new Vue({
+        el: '#app01',
+        data: {
+            text: '故事开始以前',
+            isActive: true,
+            hasErrior: true,
+            // 样式数组
+            correctClass: 'correct',
+            errorClass: 'error',
+            colorStyle: {
+                color: 'saddlebrown',
+            },
+            fontSizeStyle: {
+                fontSize: '16px'
+            },
+            styleRule: {
+                color: 'blue',
+                fontSize: '12px'
+            }
+
+        }
+
+    })
+</script>
+
+</html>

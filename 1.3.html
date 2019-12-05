@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件与方法</title>
+</head>
+
+<body>
+    <!-- 事件 -->
+    <!-- <button onclick="say()">点击</button>
+    <script>
+        // 方法/函数
+        function say() {
+            alert('火车开')
+        }
+    </script> -->
+
+    <div class="app">
+        <button @click="say()">点击</button>
+        <button v-on:click="say">点击</button>
+        <button v-on:click="hello('vantch.com')">点击</button>
+        <p>{{welcome}}</p>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            welcome: '点击欢迎！'
+        },
+        // 事件属性：注册事件方法 
+        methods: {
+            say: function() {
+                this.welcome = 'welcome';
+            },
+            hello: function(site) {
+                this.welcome = 'welcome ' + site + ' 网站';
+            }
+        }
+    })
+</script>
+
+</html>

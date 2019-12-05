@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单控件中的双向数据绑定</title>
+</head>
+
+<body>
+    <div class="app">
+        <p>
+            usename: <input type="text" placeholder="请输入用户名或者邮箱地址" v-model="username">
+        </p>
+        <p>您输入的内容是：{{username}}</p>
+        <p>您是：
+            <select name="" id="" v-model="level">
+                <option value="1">VIP 1</option>
+                <option value="2">VIP 2</option>
+                <option value="3">VIP 3</option>
+            </select>
+        </p>
+        <p>你的级别是：{{level}}</p>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            username: '',
+            level: '1'
+        }
+    })
+</script>
+
+</html>
