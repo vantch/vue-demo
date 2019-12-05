@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算属性</title>
+</head>
+
+<body>
+    <div class="app">
+        <p>
+            品名： {{name}} <br> 价格：
+            <input type="number" v-model.number="price"> <br> 数量：
+            <input type="number" v-model.number="number">
+        </p>
+        <p>金额: {{price * number}}(元)</p>
+        <!-- Vue 实例中的计算属性 -->
+        <p>金额: {{total}}(元)</p>
+
+        <!-- Vue 实例中的方法属性 -->
+        <p>金额: {{ totalOne() }}(元)</p>
+    </div>
+
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            name: 'iPhone',
+            price: 0,
+            number: 0
+        },
+        // 计算属性/派生属性
+        computed: {
+            total: function() {
+                return this.price * this.number;
+            }
+        },
+
+        // 方法属性 不能缓存
+        methods: {
+            totalOne: function() {
+                return this.price * this.number;
+            }
+        },
+    })
+</script>
+
+</html>
