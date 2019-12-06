@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用监听器侦听模板数据变化</title>
+</head>
+
+<body>
+    <div class="app">
+        <p>
+            <input type="text" placeholder="username or email" v-model="username">
+        </p>
+        <p v-text="username"></p>
+        <select name="" id="" v-model.number="num">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </select>
+        <p>you choice {{num}}</p>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            username: '',
+            num: '1',
+            userNameList: ['admin', 'app', 'vantch']
+        },
+        // 监听属性 ，侦听器
+        watch: {
+            username: function(newValue) {
+                this.userNameList.forEach(function(value) {
+                    if (newValue === value) {
+                        alert('not username');
+                        document.getElementsByTagName('input').focus();
+                    }
+                })
+            },
+            num: function(newValue) {
+                switch (newValue) {
+                    case 1:
+                        alert('朴树');
+                        break;
+
+                    case 2:
+                        alert('窦唯');
+                        break;
+
+                    case 3:
+                        alert('李志');
+                        break;
+
+
+                }
+            }
+        },
+    })
+</script>
+
+</html>

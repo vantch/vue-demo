@@ -10,17 +10,14 @@
 
 <body>
     <div class="app">
-        <p>
-            品名： {{name}} <br> 价格：
-            <input type="number" v-model.number="price"> <br> 数量：
-            <input type="number" v-model.number="number">
-        </p>
-        <p>金额: {{price * number}}(元)</p>
-        <!-- Vue 实例中的计算属性 -->
-        <p>金额: {{total}}(元)</p>
+        <p>品名：{{name}}</p>
+        <p> 价格：<input type="number" v-model.number="price"> </p>
+        <p>数量：<input type="number" v-model.number="number"></p>
+        <p>总计： {{price * number}}</p>
+        <p>总计： {{total}}</p>
+        <p>总计： {{ totalOne() }}</p>
 
-        <!-- Vue 实例中的方法属性 -->
-        <p>金额: {{ totalOne() }}(元)</p>
+
     </div>
 
 </body>
@@ -29,9 +26,9 @@
     var vm = new Vue({
         el: '.app',
         data: {
-            name: 'iPhone',
+            name: '床垫',
             price: 5000,
-            number: 1
+            number: 1,
         },
         // 计算属性/派生属性
         computed: {
@@ -46,6 +43,7 @@
                 return this.price * this.number;
             }
         },
+
     })
 </script>
 

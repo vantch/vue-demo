@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条件的判断与元素的显示切换</title>
+</head>
+
+<body>
+    <div class="app">
+        <p v-text="content" v-if="on"></p>
+        <p v-text="content" v-show="seen"></p>
+
+    </div>
+
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            on: true,
+            seen: true,
+            content: '今晚打老虎'
+        }
+
+    });
+    vm.on = false;
+    vm.seen = false;
+</script>
+
+</html>

@@ -20,7 +20,7 @@
         <h3 v-text="name"></h3>
         <h3 v-html="name"></h3>
         <!-- 3. 数据作为属性值 v-bind="" -->
-        <h3 v-bind:title="title">彩虹</h3>
+        <h3 v-bind:title="singer">彩虹</h3>
         <!-- 也可以将数据直接写到属性值中，不通过实例数据 -->
         <h3 v-bind:title="'许巍'">蓝莲花</h3>
         <!-- 4. 数据上可以直接运算 或者 运用 JS 函数处理 -->
@@ -37,7 +37,7 @@
             site: 'vantch.com',
             domin: 'van',
             name: '<span style="color:green"> 稻香 </span>',
-            title: '周杰伦',
+            singer: '周杰伦',
             num: '100'
         }
 

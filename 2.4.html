@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环输出与列表渲染</title>
+</head>
+
+<body>
+    <div class="app">
+        <p v-text="title"></p>
+        <!-- <ui>
+            <li>html</li>
+            <li>css</li>
+            <li>javascrip</li>
+            <li>php</li>
+            <li>java</li>
+        </ui> -->
+        <hr>
+        <ui>
+            <li v-for="course in courses">{{course}}</li>
+        </ui>
+        <hr>
+        <ui>
+            <li v-for="(product,key) in products ">{{key}} -- {{product.name}} : {{product.price}}</li>
+        </ui>
+
+    </div>
+
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            title: 'Course List',
+            courses: ['html', 'css', 'javascript', 'php', 'java'],
+            products: [{
+                    name: '凯奇',
+                    price: 2000,
+                }, {
+                    name: '3d',
+                    price: 12000,
+                }, {
+                    name: '兰博基尼',
+                    price: 20003,
+                },
+
+            ]
+        }
+
+    });
+</script>
+
+</html>

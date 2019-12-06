@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件与方法</title>
+</head>
+
+<body>
+    <div class="app">
+        <button v-text="buttonText" v-on:click="say"></button>
+        <button v-text="buttonText" @click="say"></button>
+        <button v-text="buttonText" @click="hello('vantch.com')"></button>
+        <p v-text="name"></p>
+    </div>
+</body>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '.app',
+        data: {
+            name: 'This is name',
+            buttonText: '点击'
+        },
+        // 注册事件方法
+        methods: {
+            say: function() {
+                this.name = '点击之后的 name';
+            },
+            hello: function(site) {
+                this.name = 'hello ' + site + ' web';
+            }
+        },
+    })
+</script>
+
+</html>
