@@ -18,9 +18,10 @@
         <div>
             <input type="text" v-model="info">
             <button @click="handleClick">提交</button>
+            <span v-once>这个将不会改变: {{ msg }}</span>
         </div>
         <ul>
-            <todo-item v-for="item in list" v-bind:item='item'></todo-item>
+            <todo-item v-for="item in list" v-bind:todo='item'></todo-item>
 
         </ul>
     </div>
@@ -28,14 +29,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script>
         Vue.component('todo-item', {
-            props: ['item'],
-            template: '<li class="item">{{item}}</li>'
+            props: ['todo'],
+            template: '<li class="item">{{todo}}</li>'
         })
-        new Vue({
+        var vm = new Vue({
             el: '#app',
             data() {
                 return {
-                    msg: 'Vue',
+                    msg: 'Vuessss',
                     info: '',
                     list: [],
                 }
