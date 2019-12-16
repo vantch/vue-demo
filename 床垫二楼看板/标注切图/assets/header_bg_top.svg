@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="599px" height="57px" viewBox="0 0 599 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>header_bg_top</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#1A5880" offset="0%"></stop>
+            <stop stop-color="#245B86" offset="38.4374222%"></stop>
+            <stop stop-color="#0F2938" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50.2445089%" x2="100%" y2="50.3143451%" id="linearGradient-2">
+            <stop stop-color="#224F7E" offset="0%"></stop>
+            <stop stop-color="#6D9BCB" offset="4.72690058%"></stop>
+            <stop stop-color="#295B92" offset="13.6777917%"></stop>
+            <stop stop-color="#5093DE" offset="28.7315281%"></stop>
+            <stop stop-color="#3D6290" offset="49.7360926%"></stop>
+            <stop stop-color="#5A8FD7" offset="70.2957763%"></stop>
+            <stop stop-color="#315B98" offset="88.1937883%"></stop>
+            <stop stop-color="#6B92CC" offset="94.3699166%"></stop>
+            <stop stop-color="#193D74" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="设备监控系统" transform="translate(-660.000000, 0.000000)">
+            <g id="header_bg_top" transform="translate(661.000000, 0.000000)">
+                <path d="M0,0 C18.8288288,5.94594595 32.2072072,13.3783784 40.1351351,22.2972973 C52.027027,35.6756757 69.8648649,55 90.6756757,55 C111.486486,55 486.081081,55 506.891892,55 C527.702703,55 545.540541,35.6756757 557.432432,22.2972973 C565.36036,13.3783784 578.738739,5.94594595 597.567568,0 L0,0 Z" id="路径" fill="url(#linearGradient-1)"></path>
+                <path d="M0,0 C18.8288288,5.94594595 32.2072072,13.3783784 40.1351351,22.2972973 C52.027027,35.6756757 69.8648649,55 90.6756757,55 C111.486486,55 486.081081,55 506.891892,55 C527.702703,55 545.540541,35.6756757 557.432432,22.2972973 C565.36036,13.3783784 578.738739,5.94594595 597.567568,0" id="形状" stroke="url(#linearGradient-2)" stroke-width="2.97297297"></path>
+            </g>
+        </g>
+    </g>
+</svg>
